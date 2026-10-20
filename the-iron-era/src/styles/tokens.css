@@ -1,0 +1,76 @@
+
+@theme {
+  /* COLORS */
+  --color-iron-bg: #080808;
+  --color-iron-surface: #171717;
+  --color-iron-elevated: #242424;
+  --color-iron-text: #f2f0ec;
+  --color-iron-muted: #999999;
+  --color-iron-subtle: #555555;
+  --color-iron-border: #303030;
+  --color-iron-accent: #c9b79a;
+
+  /* TYPOGRAPHY */
+  --font-iron-display: "Bodoni Moda", Georgia, serif;
+  --font-iron-body: "Inter", Arial, sans-serif;
+
+  --text-iron-xs: 0.75rem;
+  --text-iron-sm: 0.875rem;
+  --text-iron-base: 1rem;
+  --text-iron-lg: 1.25rem;
+  --text-iron-xl: 2rem;
+  --text-iron-title: clamp(3rem, 7vw, 7rem);
+  --text-iron-hero: clamp(5rem, 14vw, 15rem);
+
+  /* SPACING — Tailwind generates p-iron-*, gap-iron-* */
+  --spacing-iron-1: 0.25rem;
+  --spacing-iron-2: 0.5rem;
+  --spacing-iron-3: 0.75rem;
+  --spacing-iron-4: 1rem;
+  --spacing-iron-6: 1.5rem;
+  --spacing-iron-8: 2rem;
+  --spacing-iron-12: 3rem;
+  --spacing-iron-16: 4rem;
+  --spacing-iron-24: 6rem;
+  --spacing-iron-page: clamp(1.25rem, 5vw, 6rem);
+
+  /* LAYOUT */
+  --spacing-iron-header: 5.5rem;
+  --container-iron-content: 90rem;
+
+  /* ANIMATION */
+  --ease-iron-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-iron-cinematic: cubic-bezier(0.76, 0, 0.24, 1);
+
+  --animate-iron-fade: iron-fade 800ms var(--ease-iron-smooth) both;
+}
+
+@keyframes iron-fade {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom properties that don't need Tailwind utilities */
+:root {
+  --iron-spotlight-core: rgba(255, 244, 222, 0.20);
+  --iron-spotlight-falloff: rgba(255, 244, 222, 0);
+  --iron-hero-overlay: rgba(0, 0, 0, 0.25);
+
+  --iron-z-background: 0;
+  --iron-z-typography: 10;
+  --iron-z-arnold: 20;
+  --iron-z-navigation: 30;
+}
+:root {
+  --iron-spotlight-gradient: radial-gradient(
+    ellipse at 50% 20%,
+    var(--iron-spotlight-core) 0%,
+    var(--iron-spotlight-falloff) 70%
+  );
+}
