@@ -15,8 +15,9 @@ export const ArnoldImg = () => {
                 scale:1,
                 y:0,
                 duration:1,
-                ease:"power2.in",
+                ease:"power3.out",
                 delay:0.5,
+                
             }
             )
         }

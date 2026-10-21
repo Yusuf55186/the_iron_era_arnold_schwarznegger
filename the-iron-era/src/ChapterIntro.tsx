@@ -1,6 +1,7 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
+import { ChapterImage } from "./ChapterImage";
 gsap.registerPlugin(ScrollTrigger)
 export const ChapterIntro = () => {
     const sectionRef = useRef<HTMLElement>(null);
@@ -10,18 +11,31 @@ export const ChapterIntro = () => {
              const animation = gsap.fromTo(titleRef.current,{
                 opacity:0,
                 y:50,
-                scrollTrigger:{
-                trigger:sectionRef.current,
-                start:"top 80%",
-                  toggleActions: "play none none reset",
                 
+                
+                
+            },
+                {
+                    y:0,
+                    opacity:1,
+                    duration:1,
+                    ease:"power3.in",
+                    
+                    scrollTrigger:{
+                trigger:sectionRef.current,
+                 start: "top 80%",
+                 end: "top 30%",
+                
+                scrub:2,
+                toggleActions: "play none none reset",
+                  
+                  
                 }
-             },
-             {
-                opacity:1,
-                duration:1,
-                y:0,  
-            })
+                })
+            
+             
+            
+             
             return () => {
                 animation.scrollTrigger?.kill()
                 animation.kill();
@@ -30,8 +44,19 @@ export const ChapterIntro = () => {
     },[])
 
 return (
-    <section ref={sectionRef}>
-        <h1 ref={titleRef}>BEFORE THE LEGEND</h1>
+<div className="flex min-h-screen items-center justify-between gap-12 bg-iron-bg px-16">        
+    <section className="flex-col flex w-1/2 justify-center items-center bg-iron-bg text-iron-text" ref={sectionRef}>
+        
+         <div className="text-center">
+                <h2 className="font-iron-display text-iron-accent text-iron-xl">Chapter:01</h2>
+        <h1 className="font-iron-display text-iron-title text-iron-text" ref={titleRef} >BEFORE THE LEGEND</h1>
+        <p className="font-iron-body text-neutral-400 text ">Every Legend has a Beginning</p>
+        </div>
     </section>
+    <div className="w-1/2">
+    <ChapterImage />
+    </div>
+    </div>
+    
 )
 }
