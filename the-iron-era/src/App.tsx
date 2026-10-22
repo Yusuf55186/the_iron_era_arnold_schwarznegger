@@ -10,7 +10,9 @@ export const App  = () => {
   <Hero />
       <SpotLight />
       <ChapterIntro />
+      
   </>
+  
   
   )
 }

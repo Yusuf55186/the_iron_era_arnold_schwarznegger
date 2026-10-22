@@ -50,7 +50,15 @@ return (
          <div className="text-center">
                 <h2 className="font-iron-display text-iron-accent text-iron-xl">Chapter:01</h2>
         <h1 className="font-iron-display text-iron-title text-iron-text" ref={titleRef} >BEFORE THE LEGEND</h1>
-        <p className="font-iron-body text-neutral-400 text ">Every Legend has a Beginning</p>
+        <p className="font-iron-body text-neutral-400 text py-6">Every Legend has a Beginning</p>
+        <p className="max-w-[60ch] text-left leading-relaxed text-iron-subtle">
+Before the seven Mr. Olympia titles, before the roaring crowds and the worldwide recognition, there was a young boy from Austria with an extraordinary ambition.
+Born in 1947 in Thal, Austria, Arnold Schwarzenegger discovered bodybuilding at a time when the sport was far from mainstream.
+What began as a fascination with strength and physical development gradually became something greater: a vision of transforming not only his body, but his entire future.
+Through relentless training, discipline, and an unwavering belief in his ambitions, Arnold began the journey that would eventually redefine modern bodybuilding.
+
+**Legends are not born. They are built.**
+        </p>
         </div>
     </section>
     <div className="w-1/2">

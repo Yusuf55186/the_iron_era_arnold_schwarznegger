@@ -5,7 +5,6 @@ import { gsap } from 'gsap'
 
 export const Hero = () => {
     const headingRef = useRef<HTMLHeadingElement>(null);
-   
 
      useEffect(() => {
         if (headingRef.current){
@@ -15,6 +14,7 @@ export const Hero = () => {
                 
                 y:200,
                 filter:'blur(10px)',
+                
                  
                
             },
@@ -25,6 +25,9 @@ export const Hero = () => {
                  ease: "power2.out",
                  y:0,
                  filter: 'blur(0px)',
+                
+            
+                 
             })
           
             
@@ -46,6 +49,7 @@ export const Hero = () => {
     
  <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center">
         <h1  ref={headingRef} className="font-iron-display text-[clamp(8rem,19vw,22rem)] text-iron-hero leading-none tracking-tight">
+            
           ARNOLD
         </h1>
       </div>
