@@ -2,6 +2,7 @@
 import { SpotLight } from "./components/Spotlight"
 import { Header } from "./Header/Header"
 import { Hero } from "./Hero"
+import { EarlyYearsChapter } from "./EarlyYearsChapter"
 export const App  = () => {
   return (
     <>
@@ -10,6 +11,7 @@ export const App  = () => {
   <Hero />
       <SpotLight />
       <ChapterIntro />
+      <EarlyYearsChapter />
       
   </>
   

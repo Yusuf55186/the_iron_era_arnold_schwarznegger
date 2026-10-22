@@ -74,3 +74,28 @@
     var(--iron-spotlight-falloff) 70%
   );
 }
+.film-grain {
+  background-image:
+    radial-gradient(#ffffff 0.5px, transparent 0.5px),
+    radial-gradient(#000000 0.5px, transparent 0.5px);
+
+  background-size: 4px 4px, 3px 3px;
+  background-position: 0 0, 1px 1px;
+
+  opacity: 0.12;
+  animation: grain-shift 0.15s steps(2) infinite;
+}
+
+@keyframes grain-shift {
+  0% {
+    background-position: 0 0, 1px 1px;
+  }
+
+  50% {
+    background-position: 2px -3px, -2px 1px;
+  }
+
+  100% {
+    background-position: -3px 2px, 3px -2px;
+  }
+}
