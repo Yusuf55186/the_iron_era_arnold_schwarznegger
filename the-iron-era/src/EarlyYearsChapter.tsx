@@ -42,7 +42,7 @@ export const EarlyYearsChapter = () => {
       CHAPTER 01 / EARLY YEARS
     </p>
 
-    <h2 className="font-serif text-5xl font-bold text-white md:text-7xl">
+    <h2 className="font-iron-display text-5xl font-bold text-white md:text-7xl">
       1947 — THAL, AUSTRIA
     </h2>
 

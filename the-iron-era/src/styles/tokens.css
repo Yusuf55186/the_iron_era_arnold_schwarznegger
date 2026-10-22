@@ -9,7 +9,6 @@
   --color-iron-subtle: #555555;
   --color-iron-border: #303030;
   --color-iron-accent: #c9b79a;
-
   /* TYPOGRAPHY */
   --font-iron-display: "Bodoni Moda", Georgia, serif;
   --font-iron-body: "Inter", Arial, sans-serif;
@@ -97,5 +96,22 @@
 
   100% {
     background-position: -3px 2px, 3px -2px;
+  }
+}
+.text_gradient {
+  --color-iron-gradient: linear-gradient(to right, #c9b79a, #d2993c88);
+  background-image: var(--color-iron-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-size: 200% 200%;
+  color: transparent;
+  animation: text-effect 1s 
+}
+@keyframes text-effect {
+  0% {
+    background-position: 100% -100%;
+  }
+  100% {
+    background-position:0 -100%;
   }
 }
