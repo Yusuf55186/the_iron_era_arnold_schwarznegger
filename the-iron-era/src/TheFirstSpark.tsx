@@ -1,9 +1,43 @@
+import gsap from "gsap"
 import { FilmGrain } from "./Effects/FilmGrain"
 import { YoungArnoldImg } from "./YoungArnoldImg"
-
+import { ScrollTrigger } from "gsap/all"
+import { useEffect, useRef } from "react"
+gsap.registerPlugin(ScrollTrigger);
 export const TheFirstSpark = () => {
+    const sectionRef = useRef<HTMLElement>(null);
+    const headingRef = useRef<HTMLHeadingElement>(null);
+    
+    useEffect(() => {
+        if (!headingRef.current || !sectionRef.current) return;
+        const animation = gsap.fromTo(headingRef.current,{
+            opacity:0,
+            y:50,
+        },
+        {
+            opacity:1,
+            duration:1,
+            ease:"power2.inOut",
+            y:0,
+            scrollTrigger:{
+                trigger:sectionRef.current,
+                toggleActions: "play none none reset",
+                start: "top 100%",
+                 end: "top 10%",
+                scrub:2,
+
+            }
+        })
+        return () => {
+            animation.kill();
+            animation.scrollTrigger?.kill();
+        }
+    },[])
     return (
-        <section className="relative min-h-screen w-full overflow-hidden bg-iron-bg ">
+        <section 
+        className="relative min-h-screen w-full overflow-hidden bg-iron-bg "
+        ref={sectionRef}
+        >
             <FilmGrain />
             
   <div className="grid min-h-screen grid-cols-1 items-center gap-12 px-8 md:grid-cols-2 md:px-16">
@@ -20,7 +54,9 @@ export const TheFirstSpark = () => {
                 CHAPTER 01 — MILITARY DISCIPLINE
                 </p>
             <h2
-            className="font-iron-display text-5xl font-bold text-white md:text-7xl">
+            className="font-iron-display text-5xl font-bold text-white md:text-7xl"
+            ref={headingRef}
+            >
                 FORGED THROUGH DISCIPLINE
             </h2>
             <p
