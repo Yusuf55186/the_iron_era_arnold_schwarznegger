@@ -5,6 +5,8 @@ import { Hero } from "./Hero"
 import { EarlyYearsChapter } from "./EarlyYearsChapter"
 import { IntroCurtain } from "./components/IntroCurtain"
 import { TheFirstSpark } from "./TheFirstSpark"
+import { TheRise } from "./TheRise"
+
 export const App  = () => {
   return (
     <>
@@ -15,6 +17,7 @@ export const App  = () => {
       <ChapterIntro />
       <EarlyYearsChapter />
       <TheFirstSpark />
+      <TheRise />
   </>
   
   

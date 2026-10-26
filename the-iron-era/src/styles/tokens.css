@@ -115,3 +115,22 @@
     background-position:0 -100%;
   }
 }
+.fame-shine {
+  display: inline-block;
+
+  background: linear-gradient(
+    110deg,
+    #b9ad94 0%,
+    #b9ad94 38%,
+    #ffffff 50%,
+    #b9ad94 62%,
+    #b9ad94 100%
+  );
+
+  background-size: 250% 100%;
+  background-position: 100% 0;
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
