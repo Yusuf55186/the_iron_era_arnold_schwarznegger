@@ -1,12 +1,14 @@
 import gsap from "gsap";
+import { useState } from "react";
 import { useEffect, useRef } from "react";
 export const IntroCurtain = () => {
     const curtainRef = useRef<HTMLDivElement>(null);
-
+    const [isFinished, setIsFinished] = useState(false);
     useEffect(() => {
         if (!curtainRef.current)return;
             const timeLine = gsap.timeline({
                 delay:0.5,
+                onComplete: () => setIsFinished(true)
             })
             timeLine.to(curtainRef.current,{
                 rotateY: -35,
@@ -14,11 +16,12 @@ export const IntroCurtain = () => {
     duration: 2,
     ease: "",
             })
+            if (isFinished) return;
             return () => {
                 timeLine.kill();
             }
         
-    },[])
+    },[isFinished])
   return (
     <div 
     ref={curtainRef}
