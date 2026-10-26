@@ -24,7 +24,7 @@ export const TheFirstSpark = () => {
                 FORGED THROUGH DISCIPLINE
             </h2>
             <p
-            className="mt-6 text-xl text-neutral-200 font-iron-body"
+            className="mt-8 max-w-[60ch] text-neutral-400 leading-relaxed"
             >
                 In 1965, Arnold Schwarzenegger began his compulsory military service in the Austrian Army. While fulfilling his duties, he continued pursuing bodybuilding with remarkable determination. That same year, he competed in and won the Junior Mr. Europe title, taking an important step toward the career he envisioned.
             </p>

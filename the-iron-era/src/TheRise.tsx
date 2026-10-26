@@ -1,6 +1,8 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useEffect, useRef } from "react";
+import { ArnoldPrimeImg } from "./ArnoldPrimeImg";
+import { SpotLight } from "./components/Spotlight";
 gsap.registerPlugin(ScrollTrigger);
 export const TheRise = () => {
     const sectionRef = useRef<HTMLElement>(null);
@@ -24,7 +26,7 @@ export const TheRise = () => {
         toggleActions: "play none infinite reverse",
       },
       repeat:-1,
-      repeatDelay:1,
+      repeatDelay:2,
     }
   );
 
@@ -35,11 +37,13 @@ export const TheRise = () => {
 }, []);
     return (
     <section
-    className="relative flex items-center p-10 min-h-screen bg-iron-bg overflow-hiddden"
+    className="relative flex items-center p-20 min-h-screen bg-iron-bg overflow-hiddden"
     ref={sectionRef}
     >
+        <SpotLight />
+            
         <div
-        className="w-[500px]"
+        className="w-[500px] shrink-0"
         >
         
         <p
@@ -50,15 +54,21 @@ export const TheRise = () => {
         <h2
         className="font-display text-5xl font-bold text-white md:text-7xl"
         >
-            RISE TO
+            RISE TO {""}
             <strong ref={fameRef} className="text-iron-accent fame-shine">
                 FAME
              </strong>
         </h2>
         <p
+        className="mt-8 max-w-[60ch] text-neutral-400 leading-relaxed"
         >
-            
+            In 1967, at just 20 years old, Arnold Schwarzenegger achieved a defining milestone in his bodybuilding career: winning the NABBA Mr. Universe title in London.
+            What began as an ambitious dream in a small Austrian village was becoming reality. His extraordinary physique, relentless dedication, and determination were beginning to attract international attention.
+            But for Arnold, this victory was not the destination. It was only the beginning.
         </p>
+        </div>
+        <div className="relative flex flex-1 justify-center items-end">
+        <ArnoldPrimeImg />
         </div>
     </section>
     
